@@ -15,5 +15,5 @@ nav {
     text-decoration: none;
 }
 .nav-container > a:hover{
-    background: #666;
+    background: #666 !important;
 }

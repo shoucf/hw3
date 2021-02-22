@@ -5,7 +5,10 @@ class Tab extends React.Component {
 
     render() {
         return (
-            <a onClick={this.props.clickFunc}>{this.props.content}</a>
+            <a onClick={this.props.clickFunc}
+               style={{background: this.props.tab === this.props.content ? '#aaa': 'transparent'}}>
+                {this.props.content}
+            </a>
         );
     }
 }
@@ -19,11 +22,11 @@ class TabList extends React.Component {
         return (
             <nav>
                 <div className="nav-container">
-                    <Tab clickFunc={()=>{this.clicked("Text")}} content="Text"></Tab>
-                    <Tab clickFunc={()=>{this.clicked("Image")}} content="Image"></Tab>
-                    <Tab clickFunc={()=>{this.clicked("Video")}} content="Video"></Tab>
-                    <Tab clickFunc={()=>{this.clicked("Table")}} content="Table"></Tab>
-                    <Tab clickFunc={()=>{this.clicked("Email")}} content="Email"></Tab>
+                    <Tab clickFunc={()=>{this.clicked("Text")}} content="Text" tab={this.state.tabId}/>
+                    <Tab clickFunc={()=>{this.clicked("Image")}} content="Image" tab={this.state.tabId}/>
+                    <Tab clickFunc={()=>{this.clicked("Video")}} content="Video" tab={this.state.tabId} />
+                    <Tab clickFunc={()=>{this.clicked("Table")}} content="Table" tab={this.state.tabId} />
+                    <Tab clickFunc={()=>{this.clicked("Email")}} content="Email" tab={this.state.tabId} />
                 </div>
             </nav>
         );
